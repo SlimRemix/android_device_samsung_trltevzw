@@ -1,3 +1,4 @@
+#
 # Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,20 +12,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-# inherit from common trlte
--include device/samsung/trlte-common/BoardConfigCommon.mk
+$(call inherit-product, device/samsung/trlteusc/full_trltevzw.mk)
 
-TARGET_OTA_ASSERT_DEVICE := trltevzw,SM-N910V
+# Enhanced NFC
+$(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
 
-# Kernel
-TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_vzw_defconfig
+# Inherit common CM phone.
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
-# Camera
-TARGET_FIXUP_PREVIEW := true
+PRODUCT_NAME := slim_trltevzw
 
-# Radio
-BOARD_RIL_CLASS := ../../../device/samsung/trltevzw/ril
-
-# inherit from the proprietary version
--include vendor/samsung/trltevzw/BoardConfigVendor.mk
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_DEVICE="trltevzw" \
+    PRODUCT_NAME="trltevzw" \
+    BUILD_FINGERPRINT="samsung/trltevzw/trltevzw:5.0.1/LRX22C/N910VVRU2BOF1:user/release-keys" \
+    PRIVATE_BUILD_DESC="trltevzw-user 5.0.1 LRX22C N910VVRU2BOF1 release-keys"
