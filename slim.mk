@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/samsung/trlteusc/full_trltevzw.mk)
+$(call inherit-product, device/samsung/trltevzw/full_trltevzw.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
@@ -22,10 +22,11 @@ $(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
 # Inherit common CM phone.
 $(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
-PRODUCT_NAME := slim_trltevzw
+PRODUCT_NAME := slimremix_trltevzw
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="trltevzw" \
     PRODUCT_NAME="trltevzw" \
-    BUILD_FINGERPRINT="samsung/trltevzw/trltevzw:5.0.1/LRX22C/N910VVRU2BOF1:user/release-keys" \
-    PRIVATE_BUILD_DESC="trltevzw-user 5.0.1 LRX22C N910VVRU2BOF1 release-keys"
+    BUILD_FINGERPRINT="samsung/trltevzw/trltevzw:4.4.4/KTU84P/N910VVRU1ANJ5:user/release-keys" \
+    PRIVATE_BUILD_DESC="trltevzw-user 4.4.4 KTU84P N910VVRU1ANJ5 release-keys"
+
